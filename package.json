@@ -2,7 +2,7 @@
   "name": "cdk-stepfunctions-asl",
   "version": "0.1.0",
   "bin": {
-    "cdk-stepfunctions-asl": "bin/cdk-stepfunctions-asl.js"
+    "cdk-stepfunctions-asl": "bin/index.js"
   },
   "scripts": {
     "build": "tsc",
