@@ -15,7 +15,7 @@ export class StepfunctionsStack extends cdk.Stack {
     // Provider存在しない場合は、以下の記述が必要
     // const provider = new GithubActionsIdentityProvider(this, 'GithubProvider');
 
-    const githubActionsRole = new GithubActionsRole(this, 'Role', {
+    const githubActionsRole = new GithubActionsRole(this, 'GithubActionsRole', {
       provider: provider,
       owner: 'msato0731', // 書き換え必要
       repo: 'cdk-stepfunctions-asl',
@@ -26,7 +26,7 @@ export class StepfunctionsStack extends cdk.Stack {
     // デプロイ検証用のため強めの権限付与
     githubActionsRole.addManagedPolicy( iam.ManagedPolicy.fromAwsManagedPolicyName("AdministratorAccess") )
 
-    new cdk.CfnOutput(this, "GithubActionsRole", {
+    new cdk.CfnOutput(this, "GithubActionsRoleArn", {
       value: githubActionsRole.roleArn
     })
 
