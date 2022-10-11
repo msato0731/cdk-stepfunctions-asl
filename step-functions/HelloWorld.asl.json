@@ -8,7 +8,11 @@
     },
     "World": {
       "Type": "Pass",
-      "Result": "World",
+      "Next": "StepFunctions"
+    },
+    "StepFunctions": {
+      "Type": "Pass",
+      "Result": "StepFunctions",
       "End": true
     }
   }
